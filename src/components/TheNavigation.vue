@@ -6,7 +6,7 @@
         <router-link to="/"> Home </router-link>
       </li>
       <li v-for="destination in destinations" :key="destination.name" class="links">
-        <router-link :to="{ name: 'destinationDetails', params: { id: destination.id } }">
+        <router-link :to="{ name: 'destinationDetails', params: { slug: destination.slug } }">
           {{ destination.name }}
         </router-link>
       </li>
@@ -19,7 +19,6 @@ import store from '@/store'
 export default {
   data() {
     return {
-      destionationId: this.$route.params.id,
       destinations: store.destinations
     }
   }
