@@ -26,6 +26,11 @@ const routes = [
           import(/* webpackChunkName: "experienceDetails" */ '../views/ExperienceDetails.vue')
       }
     ]
+  },
+  {
+    path: '/:pathMatch(.*)*',
+    name: 'notFound',
+    component: () => import(/* webpackChunkName: "notFound" */ '../views/NotFound.vue')
   }
 ]
 
